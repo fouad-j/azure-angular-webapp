@@ -21,4 +21,4 @@ steps:
   condition: succeededOrFailed()
   inputs:
     testRunner: JUnit
-    testResultsFiles: 'coverage/TEST-*.xml'
+    testResultsFiles: './coverage/TEST-*.xml'
