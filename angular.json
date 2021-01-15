@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-total-test",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "angular-total-test"
+  "defaultProject": "angular-total-test",
+  "cli": {
+    "analytics": "0c4bb4ad-aa30-40ee-998a-12ba82444532"
+  }
 }
