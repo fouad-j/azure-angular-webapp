@@ -37,3 +37,15 @@ steps:
     ArtifactName: 'angular-web-app'
     publishLocation: 'Container'
   displayName: 'Publish Artifacts'
+
+- task: AzureCLI@1
+  displayName: Az File Copy to Storage
+  inputs:
+    azureSubscription: $(azureSubscription)
+    condition: and(succeeded(), eq(variables['Build.SourceBranchName'], 'master'))
+    scriptLocation: inlineScript
+    inlineScript: |
+      az storage blob upload-batch \
+        --destination \$web \
+        --account-name "$(storageAccountName)" \
+        --source "$(System.DefaultWorkingDirectory)/dist"
